@@ -58,6 +58,25 @@
         }
         .price{color:var(--secondary);font-weight:600}
 
+        /* ===== PAYMENT ===== */
+        .payment-box{
+            max-width:700px;
+            margin:0 auto;
+            display:grid;
+            gap:25px;
+        }
+        .payment-item{
+            background:#fff;
+            padding:25px;
+            border-radius:15px;
+            box-shadow:0 3px 10px rgba(0,0,0,.1);
+        }
+        .payment-item img{
+            width:220px;
+            margin:15px auto;
+            display:block;
+        }
+
         footer{background:var(--gradient);color:#fff;padding:20px;text-align:center}
 
         .whatsapp-float{
@@ -87,6 +106,7 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#collection">Koleksi</a></li>
+            <li><a href="#payment">Pembayaran</a></li>
             <li><a href="#contact">Kontak</a></li>
         </ul>
     </nav>
@@ -98,51 +118,76 @@
     <p>Pilihan Tepat untuk Gaya Muslimah Modern</p>
 </section>
 
-<!-- ===== KATALOG PRODUK (FOTO AKTIF) ===== -->
 <section id="collection">
     <h3>Koleksi Abaya</h3>
     <div class="collection">
 
         <div class="product">
-            <img src="images/abaya pearl.jpg" alt="Pearl Grace Abaya">
+            <img src="images/abaya pearl.jpg">
             <p>Pearl Grace Abaya</p>
             <p class="price">Rp 350.000</p>
         </div>
 
         <div class="product">
-            <img src="images/abaya nooir.jpg" alt="Nooir Bloom Abaya">
+            <img src="images/abaya nooir.jpg">
             <p>Nooir Bloom Abaya</p>
             <p class="price">Rp 250.000</p>
         </div>
 
         <div class="product">
-            <img src="images/abaya luxe.jpg" alt="Luxe Silver Abaya">
+            <img src="images/abaya luxe.jpg">
             <p>Luxe Silver Abaya</p>
             <p class="price">Rp 450.000</p>
         </div>
 
         <div class="product">
-            <img src="images/abaya mocha.jpg" alt="Mocha Elegance Abaya">
+            <img src="images/abaya mocha.jpg">
             <p>Mocha Elegance Abaya</p>
             <p class="price">Rp 350.000</p>
         </div>
 
         <div class="product">
-            <img src="images/abaya midnight.jpg" alt="Midnight Abaya">
+            <img src="images/abaya midnight.jpg">
             <p>Midnight Pearl Abaya</p>
             <p class="price">Rp 400.000</p>
         </div>
 
         <div class="product">
-            <img src="images/abaya 1.jpg" alt="abaya rumbai">
+            <img src="images/abaya 1.jpg">
             <p>Abaya Rumbai</p>
             <p class="price">Rp 280.000</p>
         </div>
 
         <div class="product">
-            <img src="images/abaya white.jpg" alt="White Abaya">
+            <img src="images/abaya white.jpg">
             <p>White Abaya</p>
             <p class="price">Rp 300.000</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===== PAYMENT SECTION (DITAMBAHKAN) ===== -->
+<section id="payment">
+    <h3>Metode Pembayaran</h3>
+
+    <div class="payment-box">
+
+        <div class="payment-item">
+            <h4>💳 Pembayaran QRIS</h4>
+            <p>Scan QRIS di bawah ini menggunakan aplikasi e-wallet atau mobile banking.</p>
+            <img src="images/qris.jpg" alt="QRIS Rama Signature Abaya">
+        </div>
+
+        <div class="payment-item">
+            <h4>🏦 Transfer Bank</h4>
+            <p><strong>Bank BCA</strong></p>
+            <p>No. Rekening: <strong>7765439921</strong></p>
+            <p>Atas Nama: <strong>Rama Signature Abaya</strong></p>
+            <br>
+            <p><strong>Bank Mandiri</strong></p>
+            <p>No. Rekening: <strong>0987654321</strong></p>
+            <p>Atas Nama: <strong>Rama Signature Abaya</strong></p>
         </div>
 
     </div>
@@ -162,6 +207,3 @@
 
 </body>
 </html>
-
-
-
