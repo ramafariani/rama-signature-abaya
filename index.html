@@ -17,7 +17,7 @@
 
 <style>
 /* ===== STYLE ASLI (TIDAK DIUBAH) ===== */
-:root {
+:root{
 --primary:#000;
 --secondary:#d4af37;
 --light:#fffaf5;
@@ -37,17 +37,45 @@ section{padding:80px 10%;text-align:center}
 .price{color:var(--secondary);font-weight:600}
 footer{background:var(--gradient);color:#fff;padding:20px;text-align:center}
 
-/* ===== TAMBAHAN MINIMAL (POPUP & BUTTON) ===== */
+/* ===== TOMBOL TAMBAH ===== */
 .btn{
 margin-top:10px;
 padding:8px 15px;
 border:none;
 border-radius:20px;
 background:var(--secondary);
-color:#000;
 cursor:pointer;
 }
 
+/* ===== FLOATING CART (ALA SHOPEE) ===== */
+.cart-float{
+position:fixed;
+bottom:90px;
+right:20px;
+background:var(--secondary);
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+cursor:pointer;
+z-index:300;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+.cart-badge{
+position:absolute;
+top:-5px;
+right:-5px;
+background:red;
+color:white;
+font-size:12px;
+padding:2px 6px;
+border-radius:50%;
+}
+
+/* ===== POPUP ===== */
 .popup{
 display:none;
 position:fixed;
@@ -56,7 +84,7 @@ width:100%;height:100%;
 background:rgba(0,0,0,.6);
 justify-content:center;
 align-items:center;
-z-index:200;
+z-index:400;
 }
 .popup-box{
 background:#fff;
@@ -75,7 +103,6 @@ text-align:center;
 <ul>
 <li><a href="#home">Home</a></li>
 <li><a href="#collection">Koleksi</a></li>
-<li><a href="#" onclick="openCart()">Keranjang</a></li>
 </ul>
 </nav>
 </header>
@@ -94,25 +121,31 @@ text-align:center;
 <img src="images/abaya pearl.jpg">
 <p>Pearl Grace Abaya</p>
 <p class="price">Rp 350.000</p>
-<button class="btn" onclick="addToCart('Pearl Grace Abaya',350000)">Tambah</button>
+<button class="btn" onclick="addToCart(350000)">Tambah</button>
 </div>
 
 <div class="product">
 <img src="images/abaya nooir.jpg">
 <p>Nooir Bloom Abaya</p>
 <p class="price">Rp 250.000</p>
-<button class="btn" onclick="addToCart('Nooir Bloom Abaya',250000)">Tambah</button>
+<button class="btn" onclick="addToCart(250000)">Tambah</button>
 </div>
 
 <div class="product">
 <img src="images/abaya luxe.jpg">
 <p>Luxe Silver Abaya</p>
 <p class="price">Rp 450.000</p>
-<button class="btn" onclick="addToCart('Luxe Silver Abaya',450000)">Tambah</button>
+<button class="btn" onclick="addToCart(450000)">Tambah</button>
 </div>
 
 </div>
 </section>
+
+<!-- ===== FLOATING CART ===== -->
+<div class="cart-float" onclick="openCart()">
+🛒
+<div class="cart-badge" id="cartCount">0</div>
+</div>
 
 <!-- ===== POPUP KERANJANG ===== -->
 <div class="popup" id="cartPopup">
@@ -150,27 +183,31 @@ text-align:center;
 
 <script>
 let total = 0;
+let count = 0;
 
-function addToCart(name, price){
+function addToCart(price){
 total += price;
-alert(name + " ditambahkan");
+count++;
+document.getElementById("cartCount").innerText = count;
 }
 
 function openCart(){
-document.getElementById('cartTotal').innerText =
+document.getElementById("cartTotal").innerText =
 "Total: Rp " + total.toLocaleString();
-document.getElementById('cartPopup').style.display="flex";
+document.getElementById("cartPopup").style.display="flex";
 }
 
 function openPayment(){
-closePopup('cartPopup');
-document.getElementById('paymentPopup').style.display="flex";
+closePopup("cartPopup");
+document.getElementById("paymentPopup").style.display="flex";
 }
 
 function paymentSuccess(){
-closePopup('paymentPopup');
-document.getElementById('successPopup').style.display="flex";
+closePopup("paymentPopup");
+document.getElementById("successPopup").style.display="flex";
 total = 0;
+count = 0;
+document.getElementById("cartCount").innerText = 0;
 }
 
 function closePopup(id){
