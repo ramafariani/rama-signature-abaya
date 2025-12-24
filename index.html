@@ -1,17 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
 <head>
+    <!-- ===== BASIC META ===== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Rama Signature Abaya | Abaya Elegan, Modis & Premium</title>
 
-    <!-- SEO META -->
-    <meta name="description" content="Rama Signature Abaya menghadirkan koleksi abaya elegan dan modis dengan desain premium.">
+    <meta name="description" content="Rama Signature Abaya menghadirkan koleksi abaya elegan dan modis dengan desain premium, nyaman digunakan, dan cocok untuk berbagai acara.">
+    <meta name="keywords" content="abaya elegan, abaya premium, abaya modern, rama signature abaya, fashion muslimah">
+    <meta name="author" content="Rama Signature Abaya">
     <meta name="robots" content="index, follow">
 
-    <!-- GOOGLE FONT -->
+    <!-- ===== CANONICAL ===== -->
+    <link rel="canonical" href="https://username.github.io/rama-signature-abaya/">
+
+    <!-- ===== GOOGLE FONT ===== -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- ===== STYLE (WAJIB ADA) ===== -->
+    <!-- ===== STYLE ===== -->
     <style>
         :root {
             --primary: #000000;
@@ -30,6 +37,7 @@
         body {
             background-color: var(--light);
             color: var(--primary);
+            scroll-behavior: smooth;
         }
 
         header {
@@ -46,180 +54,205 @@
             list-style: none;
             display: flex;
             gap: 20px;
+            justify-content: center;
         }
 
         nav a {
             color: white;
             text-decoration: none;
+            font-weight: 500;
         }
 
         .hero {
             padding: 150px 20px 100px;
-            text-align: center;
             background: var(--gradient);
             color: white;
+            text-align: center;
+        }
+
+        .hero img {
+            width: 250px;
+            border-radius: 20px;
+            margin-bottom: 20px;
         }
 
         .btn {
             background: white;
             color: black;
-            padding: 10px 25px;
+            padding: 12px 30px;
             border-radius: 30px;
+            font-weight: 600;
             text-decoration: none;
+            display: inline-block;
+        }
+
+        section {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .benefits, .collection, .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .benefit, .product, .testimonial {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .price {
+            color: var(--secondary);
             font-weight: 600;
         }
-        /* CSS LAINNYA BOLEH DITEMPEL DI SINI */
+
+        .order-form input,
+        .order-form textarea,
+        .order-form select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .order-form button {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        footer {
+            background: var(--gradient);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .popup, .promo-popup {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content, .promo-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 22px;
+        }
     </style>
 
-    <!-- ===== JSON-LD (TIDAK PENGARUH STYLE) ===== -->
+    <!-- ===== JSON-LD : LOCAL BUSINESS ===== -->
     <script type="application/ld+json">
-    { "@context": "https://schema.org", "@type": "ClothingStore", "name": "Rama Signature Abaya" }
+    {
+      "@context": "https://schema.org",
+      "@type": "ClothingStore",
+      "name": "Rama Signature Abaya",
+      "url": "https://username.github.io/rama-signature-abaya/",
+      "description": "Brand abaya elegan dan modis untuk muslimah modern",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ID"
+      }
+    }
     </script>
 </head>
 
 <body>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#benefits">Manfaat</a></li>
-                <li><a href="#collection">Koleksi</a></li>
-                <li><a href="#testimonials">Testimoni</a></li>
-                <li><a href="#order">Beli Sekarang</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#benefits">Manfaat</a></li>
+            <li><a href="#collection">Koleksi</a></li>
+            <li><a href="#order">Pesan</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <section class="hero" id="home">
-        <img src="images/abaya1.jpg" alt="">
-        <!-- Tulisan kecil di atas judul dihapus -->
-        <h2>Rama Signature abaya</h2>
-        <p> Pilihan Tepat untuk Gaya Muslimah Modern</p>
-        <a href="#order" class="btn">Checkout</a>
-    </section>
+<section class="hero" id="home">
+    <img src="images/abaya1.jpg" alt="Rama Signature Abaya">
+    <h2>Rama Signature Abaya</h2>
+    <p>Pilihan Tepat untuk Gaya Muslimah Modern</p>
+    <a href="#order" class="btn">Checkout</a>
+</section>
 
-    <section class="about" id="about">
-        <h3>Tentang Produk</h3>
-        <p>Rama Signature Abaya dirancang khusus untuk wanita muslimah yang ingin tampil elegan tanpa mengorbankan kenyamanan. 
-           Terbuat dari bahan premium yang ringan, halus, dan tahan lama. Cocok digunakan untuk acara formal maupun kasual.</p>
-    </section>
+<section id="about">
+    <h3>Tentang Produk</h3>
+    <p>Abaya premium dengan desain modern, nyaman, dan elegan.</p>
+</section>
 
-    <section class="benefits" id="benefits">
-        <h3>Keunggulan & Manfaat</h3>
-        <div class="benefits">
-            <div class="benefit"><i>🧵</i><p>Bahan Premium Berkualitas</p></div>
-            <div class="benefit"><i>🌸</i><p>Desain Modern & Elegan</p></div>
-            <div class="benefit"><i>🕊️</i><p>Ringan dan Nyaman Dipakai</p></div>
-            <div class="benefit"><i>💧</i><p>Mudah Dicuci & Tidak Mudah Kusut</p></div>
-        </div>
-    </section>
-
-    <section id="collection">
-        <h3>Koleksi Produk</h3>
-        <div class="collection">
-            <div class="product">
-                <img src="images/Pearl Grace Abaya.jpg" alt="Pearl Grace Abaya">
-                <p>Pearl Grace Abaya</p>
-                <p class="price">Rp 350.000</p>
-            </div>
-            <div class="product">
-                <img src="images/Nooir Bloom Abaya.jpg" alt="Nooir Bloom Abaya">
-                <p>Nooir Bloom Abaya</p>
-                <p class="price">Rp 250.000</p>
-            </div>
-            <div class="product">
-                <img src="images/Luxe silver Abaya.jpg" alt="Luxe Silver Abaya">
-                <p>Luxe Silver Abaya</p>
-                <p class="price">Rp 450.000</p>
-            </div>
-            <div class="product">
-                <img src="images/Mocha elegance Abaya.jpg" alt="Mocha Elegance Abaya">
-                <p>Mocha Elegance Abaya</p>
-                <p class="price">Rp 350.000</p>
-            </div>
-            <div class="product">
-                <img src="images/Midnight pearl abaya.jpg" alt="Midnight Pearl abaya">
-                <p>Midnight Pearl abaya</p>
-                <p class="price">Rp 400.000</p>
-            </div>
-            <div class="product">
-                <img src="images/Abaya Rumbai.jpg" alt="Abaya Rumbai">
-                <p>Abaya Rumbai</p>
-                <p class="price">Rp 280.000</p>
-            </div>
-            <div class="product">
-                <img src="images/White Abaya.jpg" alt="White Abaya">
-                <p>White Abaya</p>
-                <p class="price">Rp 300.000</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials">
-        <h3>Testimoni Pengguna</h3>
-        <div class="testimonials">
-            <div class="testimonial"> <p>"Abaya-nya cantik banget! Jahitannya rapi dan bahannya adem."</p><strong>- Laila, Jakarta</strong></div>
-            <div class="testimonial"> <p>"Suka banget! Bisa dipakai untuk acara formal maupun santai."</p><strong>- Rani, Tangerang</strong></div>
-            <div class="testimonial"> <p>"Kualitas melebihi ekspektasi. Worth it banget!"</p><strong>- Dina, Bandung</strong></div>
-        </div>
-    </section>
-
-    <section id="order">
-        <h3>Form Pemesanan</h3>
-        <form class="order-form" onsubmit="event.preventDefault(); showPopup();">
-            <input type="text" placeholder="Nama Lengkap" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Alamat Lengkap" rows="3" required></textarea>
-            <select name="jenis-produk" required>
-                <option value="" disabled selected>Pilih Jenis Abaya</option>
-                <option value="Pearl grace abaya">1. Pearl grace abaya</option>
-                <option value="Nooir bloom abaya">2. Nooir bloom abaya</option>
-                <option value="Luxe silver abaya">3. Luxe silver abaya</option>
-                <option value="Mocha elegance abaya">5. Mocha elegance abaya</option>
-                <option value="Midnight pearl abaya">6. Midnight pearl abaya</option>
-                <option value="Abaya rumbai">7. Abaya rumbai</option>
-                <option value="White Abaya">8. White Abaya</option>
-            </select>
-            <input type="number" placeholder="Jumlah Pesanan" min="1" required>
-            <button type="submit">Kirim Pesanan</button>
-        </form>                                                                                                                
-    </section>
-
-    <section class="contact" id="contact">
-        <h3>Kontak Kami</h3>
-        <p>📍 Tangerang, Banten</p>
-        <p>📞 0812-3456-7890</p>
-        <p>✉️ info@ramasignatureabaya.com</p>
-        <p><a href="#">🌐 Instagram</a> |  <a href="#">TikTok</a></p>
-    </section>
-
-    <footer>
-        <p>© 2025 Rama Signature Abaya. All Rights Reserved. | <a href="#" style="color:white;">Kebijakan Privasi</a></p>
-    </footer>
-
-    <div class="popup" id="popup">
-        <div class="popup-content">
-            <h4>Pesanan Anda Berhasil Dikirim!</h4>
-            <p>Terima kasih telah memesan di Rama Signature Abaya 💖</p>
-            <button class="btn" onclick="closePopup()">Tutup</button>
-        </div>
+<section id="benefits">
+    <h3>Keunggulan</h3>
+    <div class="benefits">
+        <div class="benefit">Bahan Premium</div>
+        <div class="benefit">Desain Elegan</div>
+        <div class="benefit">Nyaman Dipakai</div>
+        <div class="benefit">Tahan Lama</div>
     </div>
+</section>
 
-    <div class="promo-popup" id="promo">
-        <div class="promo-content">
-            <h4>🎁 Promo Spesial!</h4>
-            <p>Dapatkan diskon <strong>10%</strong> untuk pembelian pertama Anda!</p>
-            <button class="btn" onclick="closePromo()">Tutup</button>
-        </div>
+<section id="collection">
+    <h3>Koleksi</h3>
+    <div class="collection">
+        <div class="product"><p>Pearl Grace Abaya</p><p class="price">Rp 350.000</p></div>
+        <div class="product"><p>Nooir Bloom Abaya</p><p class="price">Rp 250.000</p></div>
+        <div class="product"><p>Luxe Silver Abaya</p><p class="price">Rp 450.000</p></div>
     </div>
+</section>
 
-    <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank">💬</a>
+<section id="order">
+    <h3>Form Pemesanan</h3>
+    <form class="order-form" onsubmit="event.preventDefault(); alert('Pesanan terkirim');">
+        <input type="text" placeholder="Nama" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Alamat" required></textarea>
+        <button type="submit">Kirim</button>
+    </form>
+</section>
+
+<section id="contact">
+    <h3>Kontak</h3>
+    <p>📍 Tangerang</p>
+    <p>📞 0812-3456-7890</p>
+</section>
+
+<footer>
+    <p>© 2025 Rama Signature Abaya</p>
+</footer>
+
+<a href="https://wa.me/6281234567890" class="whatsapp-float">💬</a>
 
 </body>
-
 </html>
-
-
