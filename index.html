@@ -7,10 +7,14 @@
 
     <title>Rama Signature Abaya | Abaya Elegan, Modis & Premium</title>
 
+    <!-- ===== SEO META ===== -->
     <meta name="description" content="Rama Signature Abaya menghadirkan koleksi abaya elegan dan modis dengan desain premium, nyaman digunakan, dan cocok untuk berbagai acara.">
     <meta name="keywords" content="abaya elegan, abaya premium, abaya modern, rama signature abaya, fashion muslimah">
     <meta name="author" content="Rama Signature Abaya">
     <meta name="robots" content="index, follow">
+
+    <!-- ===== GOOGLE SEARCH CONSOLE VERIFICATION ===== -->
+    <meta name="google-site-verification" content="google4a89bd4de7fe8211" />
 
     <!-- ===== CANONICAL ===== -->
     <link rel="canonical" href="https://username.github.io/rama-signature-abaya/">
@@ -42,23 +46,22 @@
 
         header {
             background: var(--gradient);
-            color: white;
             padding: 15px 8%;
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 10;
+            z-index: 100;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
             justify-content: center;
+            gap: 20px;
         }
 
         nav a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
             font-weight: 500;
         }
@@ -66,7 +69,7 @@
         .hero {
             padding: 150px 20px 100px;
             background: var(--gradient);
-            color: white;
+            color: #ffffff;
             text-align: center;
         }
 
@@ -77,13 +80,14 @@
         }
 
         .btn {
-            background: white;
-            color: black;
+            background: #ffffff;
+            color: #000000;
             padding: 12px 30px;
             border-radius: 30px;
             font-weight: 600;
             text-decoration: none;
             display: inline-block;
+            margin-top: 15px;
         }
 
         section {
@@ -91,22 +95,30 @@
             text-align: center;
         }
 
-        .benefits, .collection, .testimonials {
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .benefits,
+        .collection {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 25px;
         }
 
-        .benefit, .product, .testimonial {
-            background: white;
+        .benefit,
+        .product {
+            background: #ffffff;
             padding: 25px;
             border-radius: 15px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
 
         .product img {
             width: 100%;
             border-radius: 10px;
+            margin-bottom: 10px;
         }
 
         .price {
@@ -126,34 +138,18 @@
 
         .order-form button {
             background: var(--gradient);
-            color: white;
+            color: #ffffff;
             border: none;
             padding: 12px 30px;
             border-radius: 30px;
-            cursor: pointer;
             font-weight: 600;
+            cursor: pointer;
         }
 
         footer {
             background: var(--gradient);
-            color: white;
+            color: #ffffff;
             padding: 20px;
-            text-align: center;
-        }
-
-        .popup, .promo-popup {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.6);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup-content, .promo-content {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
             text-align: center;
         }
 
@@ -162,15 +158,15 @@
             bottom: 20px;
             right: 20px;
             background: #25D366;
-            color: white;
+            color: #ffffff;
             padding: 15px;
             border-radius: 50%;
-            text-decoration: none;
             font-size: 22px;
+            text-decoration: none;
         }
     </style>
 
-    <!-- ===== JSON-LD : LOCAL BUSINESS ===== -->
+    <!-- ===== JSON-LD STRUCTURED DATA ===== -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -188,71 +184,80 @@
 
 <body>
 
-<header>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Tentang</a></li>
-            <li><a href="#benefits">Manfaat</a></li>
-            <li><a href="#collection">Koleksi</a></li>
-            <li><a href="#order">Pesan</a></li>
-            <li><a href="#contact">Kontak</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#benefits">Manfaat</a></li>
+                <li><a href="#collection">Koleksi</a></li>
+                <li><a href="#order">Pesan</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section class="hero" id="home">
-    <img src="images/abaya1.jpg" alt="Rama Signature Abaya">
-    <h2>Rama Signature Abaya</h2>
-    <p>Pilihan Tepat untuk Gaya Muslimah Modern</p>
-    <a href="#order" class="btn">Checkout</a>
-</section>
+    <section class="hero" id="home">
+        <img src="images/abaya1.jpg" alt="Rama Signature Abaya">
+        <h2>Rama Signature Abaya</h2>
+        <p>Pilihan Tepat untuk Gaya Muslimah Modern</p>
+        <a href="#order" class="btn">Checkout</a>
+    </section>
 
-<section id="about">
-    <h3>Tentang Produk</h3>
-    <p>Abaya premium dengan desain modern, nyaman, dan elegan.</p>
-</section>
+    <section id="about">
+        <h3>Tentang Produk</h3>
+        <p>Abaya premium dengan desain modern, nyaman, dan elegan untuk berbagai kesempatan.</p>
+    </section>
 
-<section id="benefits">
-    <h3>Keunggulan</h3>
-    <div class="benefits">
-        <div class="benefit">Bahan Premium</div>
-        <div class="benefit">Desain Elegan</div>
-        <div class="benefit">Nyaman Dipakai</div>
-        <div class="benefit">Tahan Lama</div>
-    </div>
-</section>
+    <section id="benefits">
+        <h3>Keunggulan Produk</h3>
+        <div class="benefits">
+            <div class="benefit">Bahan Premium Berkualitas</div>
+            <div class="benefit">Desain Elegan & Modern</div>
+            <div class="benefit">Nyaman Digunakan</div>
+            <div class="benefit">Tahan Lama</div>
+        </div>
+    </section>
 
-<section id="collection">
-    <h3>Koleksi</h3>
-    <div class="collection">
-        <div class="product"><p>Pearl Grace Abaya</p><p class="price">Rp 350.000</p></div>
-        <div class="product"><p>Nooir Bloom Abaya</p><p class="price">Rp 250.000</p></div>
-        <div class="product"><p>Luxe Silver Abaya</p><p class="price">Rp 450.000</p></div>
-    </div>
-</section>
+    <section id="collection">
+        <h3>Koleksi Abaya</h3>
+        <div class="collection">
+            <div class="product">
+                <p>Pearl Grace Abaya</p>
+                <p class="price">Rp 350.000</p>
+            </div>
+            <div class="product">
+                <p>Nooir Bloom Abaya</p>
+                <p class="price">Rp 250.000</p>
+            </div>
+            <div class="product">
+                <p>Luxe Silver Abaya</p>
+                <p class="price">Rp 450.000</p>
+            </div>
+        </div>
+    </section>
 
-<section id="order">
-    <h3>Form Pemesanan</h3>
-    <form class="order-form" onsubmit="event.preventDefault(); alert('Pesanan terkirim');">
-        <input type="text" placeholder="Nama" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Alamat" required></textarea>
-        <button type="submit">Kirim</button>
-    </form>
-</section>
+    <section id="order">
+        <h3>Form Pemesanan</h3>
+        <form class="order-form" onsubmit="event.preventDefault(); alert('Pesanan berhasil dikirim');">
+            <input type="text" placeholder="Nama Lengkap" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Alamat Lengkap" required></textarea>
+            <button type="submit">Kirim Pesanan</button>
+        </form>
+    </section>
 
-<section id="contact">
-    <h3>Kontak</h3>
-    <p>📍 Tangerang</p>
-    <p>📞 0812-3456-7890</p>
-</section>
+    <section id="contact">
+        <h3>Kontak Kami</h3>
+        <p>📍 Tangerang</p>
+        <p>📞 0812-3456-7890</p>
+    </section>
 
-<footer>
-    <p>© 2025 Rama Signature Abaya</p>
-</footer>
+    <footer>
+        <p>© 2025 Rama Signature Abaya. All Rights Reserved.</p>
+    </footer>
 
-<a href="https://wa.me/6281234567890" class="whatsapp-float">💬</a>
+    <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank">💬</a>
 
 </body>
 </html>
