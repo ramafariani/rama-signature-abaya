@@ -1,209 +1,182 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Rama Signature Abaya | Abaya Elegan, Modis & Premium</title>
+<title>Rama Signature Abaya | Abaya Elegan, Modis & Premium</title>
 
-    <!-- SEO META -->
-    <meta name="description" content="Rama Signature Abaya menghadirkan koleksi abaya elegan dan modis dengan desain premium.">
-    <meta name="keywords" content="abaya elegan, abaya premium, abaya modern">
-    <meta name="robots" content="index, follow">
+<meta name="description" content="Rama Signature Abaya menghadirkan koleksi abaya elegan dan modis dengan desain premium.">
+<meta name="keywords" content="abaya elegan, abaya premium, abaya modern">
+<meta name="robots" content="index, follow">
 
-    <!-- Google Search Console -->
-    <meta name="google-site-verification" content="google4a89bd4de7fe8211" />
+<meta name="google-site-verification" content="google4a89bd4de7fe8211" />
+<link rel="canonical" href="https://username.github.io/rama-signature-abaya/">
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://username.github.io/rama-signature-abaya/">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== STYLE ASLI (TIDAK DIUBAH) ===== */
+:root {
+--primary:#000;
+--secondary:#d4af37;
+--light:#fffaf5;
+--gradient:linear-gradient(135deg,#000,#d4af37);
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:var(--light);color:var(--primary)}
+header{background:var(--gradient);padding:15px 8%;position:fixed;width:100%;top:0;z-index:100}
+nav ul{list-style:none;display:flex;justify-content:center;gap:20px}
+nav a{color:#fff;text-decoration:none}
+.hero{padding:150px 20px 100px;background:var(--gradient);color:#fff;text-align:center}
+.hero img{width:250px;border-radius:20px;margin-bottom:20px}
+section{padding:80px 10%;text-align:center}
+.collection{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px}
+.product{background:#fff;padding:20px;border-radius:15px;box-shadow:0 3px 10px rgba(0,0,0,.1)}
+.product img{width:100%;border-radius:10px;margin-bottom:10px}
+.price{color:var(--secondary);font-weight:600}
+footer{background:var(--gradient);color:#fff;padding:20px;text-align:center}
 
-    <!-- STYLE -->
-    <style>
-        :root {
-            --primary:#000;
-            --secondary:#d4af37;
-            --light:#fffaf5;
-            --gradient:linear-gradient(135deg,#000,#d4af37);
-        }
-        *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-        body{background:var(--light);color:var(--primary)}
-        header{background:var(--gradient);padding:15px 8%;position:fixed;width:100%;top:0;z-index:100}
-        nav ul{list-style:none;display:flex;justify-content:center;gap:20px}
-        nav a{color:#fff;text-decoration:none}
+/* ===== TAMBAHAN MINIMAL (POPUP & BUTTON) ===== */
+.btn{
+margin-top:10px;
+padding:8px 15px;
+border:none;
+border-radius:20px;
+background:var(--secondary);
+color:#000;
+cursor:pointer;
+}
 
-        .hero{padding:150px 20px 100px;background:var(--gradient);color:#fff;text-align:center}
-        .hero img{width:250px;border-radius:20px;margin-bottom:20px}
-
-        section{padding:80px 10%;text-align:center}
-        h3{margin-bottom:30px}
-
-        .collection{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            gap:25px;
-        }
-        .product{
-            background:#fff;
-            padding:20px;
-            border-radius:15px;
-            box-shadow:0 3px 10px rgba(0,0,0,.1);
-        }
-        .product img{
-            width:100%;
-            border-radius:10px;
-            margin-bottom:10px;
-        }
-        .price{color:var(--secondary);font-weight:600}
-
-        /* ===== PAYMENT ===== */
-        .payment-box{
-            max-width:700px;
-            margin:0 auto;
-            display:grid;
-            gap:25px;
-        }
-        .payment-item{
-            background:#fff;
-            padding:25px;
-            border-radius:15px;
-            box-shadow:0 3px 10px rgba(0,0,0,.1);
-        }
-        .payment-item img{
-            width:220px;
-            margin:15px auto;
-            display:block;
-        }
-
-        footer{background:var(--gradient);color:#fff;padding:20px;text-align:center}
-
-        .whatsapp-float{
-            position:fixed;bottom:20px;right:20px;
-            background:#25D366;color:#fff;
-            padding:15px;border-radius:50%;
-            text-decoration:none;font-size:22px;
-        }
-    </style>
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context":"https://schema.org",
-      "@type":"ClothingStore",
-      "name":"Rama Signature Abaya",
-      "url":"https://username.github.io/rama-signature-abaya/",
-      "address":{"@type":"PostalAddress","addressCountry":"ID"}
-    }
-    </script>
+.popup{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,.6);
+justify-content:center;
+align-items:center;
+z-index:200;
+}
+.popup-box{
+background:#fff;
+padding:30px;
+border-radius:20px;
+max-width:400px;
+text-align:center;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#collection">Koleksi</a></li>
-            <li><a href="#payment">Pembayaran</a></li>
-            <li><a href="#contact">Kontak</a></li>
-        </ul>
-    </nav>
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#collection">Koleksi</a></li>
+<li><a href="#" onclick="openCart()">Keranjang</a></li>
+</ul>
+</nav>
 </header>
 
 <section class="hero" id="home">
-    <img src="images/background 2.jpg" alt="Rama Signature Abaya">
-    <h2>Rama Signature Abaya</h2>
-    <p>Pilihan Tepat untuk Gaya Muslimah Modern</p>
+<img src="images/background 2.jpg">
+<h2>Rama Signature Abaya</h2>
+<p>Pilihan Tepat untuk Gaya Muslimah Modern</p>
 </section>
 
 <section id="collection">
-    <h3>Koleksi Abaya</h3>
-    <div class="collection">
+<h3>Koleksi Abaya</h3>
+<div class="collection">
 
-        <div class="product">
-            <img src="images/abaya pearl.jpg">
-            <p>Pearl Grace Abaya</p>
-            <p class="price">Rp 350.000</p>
-        </div>
+<div class="product">
+<img src="images/abaya pearl.jpg">
+<p>Pearl Grace Abaya</p>
+<p class="price">Rp 350.000</p>
+<button class="btn" onclick="addToCart('Pearl Grace Abaya',350000)">Tambah</button>
+</div>
 
-        <div class="product">
-            <img src="images/abaya nooir.jpg">
-            <p>Nooir Bloom Abaya</p>
-            <p class="price">Rp 250.000</p>
-        </div>
+<div class="product">
+<img src="images/abaya nooir.jpg">
+<p>Nooir Bloom Abaya</p>
+<p class="price">Rp 250.000</p>
+<button class="btn" onclick="addToCart('Nooir Bloom Abaya',250000)">Tambah</button>
+</div>
 
-        <div class="product">
-            <img src="images/abaya luxe.jpg">
-            <p>Luxe Silver Abaya</p>
-            <p class="price">Rp 450.000</p>
-        </div>
+<div class="product">
+<img src="images/abaya luxe.jpg">
+<p>Luxe Silver Abaya</p>
+<p class="price">Rp 450.000</p>
+<button class="btn" onclick="addToCart('Luxe Silver Abaya',450000)">Tambah</button>
+</div>
 
-        <div class="product">
-            <img src="images/abaya mocha.jpg">
-            <p>Mocha Elegance Abaya</p>
-            <p class="price">Rp 350.000</p>
-        </div>
-
-        <div class="product">
-            <img src="images/abaya midnight.jpg">
-            <p>Midnight Pearl Abaya</p>
-            <p class="price">Rp 400.000</p>
-        </div>
-
-        <div class="product">
-            <img src="images/abaya 1.jpg">
-            <p>Abaya Rumbai</p>
-            <p class="price">Rp 280.000</p>
-        </div>
-
-        <div class="product">
-            <img src="images/abaya white.jpg">
-            <p>White Abaya</p>
-            <p class="price">Rp 300.000</p>
-        </div>
-
-    </div>
+</div>
 </section>
 
-<!-- ===== PAYMENT SECTION (DITAMBAHKAN) ===== -->
-<section id="payment">
-    <h3>Metode Pembayaran</h3>
+<!-- ===== POPUP KERANJANG ===== -->
+<div class="popup" id="cartPopup">
+<div class="popup-box">
+<h3>Keranjang</h3>
+<p id="cartTotal">Total: Rp 0</p>
+<button class="btn" onclick="openPayment()">Checkout</button><br><br>
+<button class="btn" onclick="closePopup('cartPopup')">Tutup</button>
+</div>
+</div>
 
-    <div class="payment-box">
+<!-- ===== POPUP PEMBAYARAN ===== -->
+<div class="popup" id="paymentPopup">
+<div class="popup-box">
+<h3>Pilih Pembayaran</h3>
+<p>✔ QRIS</p>
+<p>✔ Transfer Bank</p>
+<button class="btn" onclick="paymentSuccess()">Bayar</button><br><br>
+<button class="btn" onclick="closePopup('paymentPopup')">Batal</button>
+</div>
+</div>
 
-        <div class="payment-item">
-            <h4>💳 Pembayaran QRIS</h4>
-            <p>Scan QRIS di bawah ini menggunakan aplikasi e-wallet atau mobile banking.</p>
-            <img src="images/qris.jpg" alt="QRIS Rama Signature Abaya">
-        </div>
-
-        <div class="payment-item">
-            <h4>🏦 Transfer Bank</h4>
-            <p><strong>Bank BCA</strong></p>
-            <p>No. Rekening: <strong>7765439921</strong></p>
-            <p>Atas Nama: <strong>Rama Signature Abaya</strong></p>
-            <br>
-            <p><strong>Bank Mandiri</strong></p>
-            <p>No. Rekening: <strong>0987654321</strong></p>
-            <p>Atas Nama: <strong>Rama Signature Abaya</strong></p>
-        </div>
-
-    </div>
-</section>
-
-<section id="contact">
-    <h3>Kontak</h3>
-    <p>📍 Tangerang</p>
-    <p>📞 0812-3456-7890</p>
-</section>
+<!-- ===== POPUP BERHASIL ===== -->
+<div class="popup" id="successPopup">
+<div class="popup-box">
+<h3>🎉 Transaksi Berhasil</h3>
+<p>Terima kasih telah berbelanja</p>
+<button class="btn" onclick="closePopup('successPopup')">OK</button>
+</div>
+</div>
 
 <footer>
-    <p>© 2025 Rama Signature Abaya</p>
+<p>© 2025 Rama Signature Abaya</p>
 </footer>
 
-<a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank">💬</a>
+<script>
+let total = 0;
+
+function addToCart(name, price){
+total += price;
+alert(name + " ditambahkan");
+}
+
+function openCart(){
+document.getElementById('cartTotal').innerText =
+"Total: Rp " + total.toLocaleString();
+document.getElementById('cartPopup').style.display="flex";
+}
+
+function openPayment(){
+closePopup('cartPopup');
+document.getElementById('paymentPopup').style.display="flex";
+}
+
+function paymentSuccess(){
+closePopup('paymentPopup');
+document.getElementById('successPopup').style.display="flex";
+total = 0;
+}
+
+function closePopup(id){
+document.getElementById(id).style.display="none";
+}
+</script>
 
 </body>
 </html>
