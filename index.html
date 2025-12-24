@@ -16,7 +16,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ===== STYLE ASLI (TIDAK DIUBAH) ===== */
 :root{
 --primary:#000;
 --secondary:#d4af37;
@@ -28,16 +27,16 @@ body{background:var(--light);color:var(--primary)}
 header{background:var(--gradient);padding:15px 8%;position:fixed;width:100%;top:0;z-index:100}
 nav ul{list-style:none;display:flex;justify-content:center;gap:20px}
 nav a{color:#fff;text-decoration:none}
+
 .hero{padding:150px 20px 100px;background:var(--gradient);color:#fff;text-align:center}
 .hero img{width:250px;border-radius:20px;margin-bottom:20px}
+
 section{padding:80px 10%;text-align:center}
 .collection{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px}
 .product{background:#fff;padding:20px;border-radius:15px;box-shadow:0 3px 10px rgba(0,0,0,.1)}
 .product img{width:100%;border-radius:10px;margin-bottom:10px}
 .price{color:var(--secondary);font-weight:600}
-footer{background:var(--gradient);color:#fff;padding:20px;text-align:center}
 
-/* ===== TOMBOL TAMBAH ===== */
 .btn{
 margin-top:10px;
 padding:8px 15px;
@@ -47,14 +46,13 @@ background:var(--secondary);
 cursor:pointer;
 }
 
-/* ===== FLOATING CART (ALA SHOPEE) ===== */
+/* FLOATING CART */
 .cart-float{
 position:fixed;
 bottom:90px;
 right:20px;
 background:var(--secondary);
-width:55px;
-height:55px;
+width:55px;height:55px;
 border-radius:50%;
 display:flex;
 align-items:center;
@@ -66,21 +64,18 @@ box-shadow:0 5px 15px rgba(0,0,0,.3);
 }
 .cart-badge{
 position:absolute;
-top:-5px;
-right:-5px;
-background:red;
-color:white;
+top:-5px;right:-5px;
+background:red;color:white;
 font-size:12px;
 padding:2px 6px;
 border-radius:50%;
 }
 
-/* ===== POPUP ===== */
+/* POPUP */
 .popup{
 display:none;
 position:fixed;
-top:0;left:0;
-width:100%;height:100%;
+inset:0;
 background:rgba(0,0,0,.6);
 justify-content:center;
 align-items:center;
@@ -90,10 +85,22 @@ z-index:400;
 background:#fff;
 padding:30px;
 border-radius:20px;
-max-width:400px;
+max-width:420px;
 text-align:center;
 }
+
+footer{background:var(--gradient);color:#fff;padding:20px;text-align:center}
 </style>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"ClothingStore",
+"name":"Rama Signature Abaya",
+"url":"https://username.github.io/rama-signature-abaya/",
+"address":{"@type":"PostalAddress","addressCountry":"ID"}
+}
+</script>
 </head>
 
 <body>
@@ -103,6 +110,7 @@ text-align:center;
 <ul>
 <li><a href="#home">Home</a></li>
 <li><a href="#collection">Koleksi</a></li>
+<li><a href="#contact">Kontak</a></li>
 </ul>
 </nav>
 </header>
@@ -138,16 +146,43 @@ text-align:center;
 <button class="btn" onclick="addToCart(450000)">Tambah</button>
 </div>
 
+<div class="product">
+<img src="images/abaya mocha.jpg">
+<p>Mocha Elegance Abaya</p>
+<p class="price">Rp 350.000</p>
+<button class="btn" onclick="addToCart(350000)">Tambah</button>
+</div>
+
+<div class="product">
+<img src="images/abaya midnight.jpg">
+<p>Midnight Pearl Abaya</p>
+<p class="price">Rp 400.000</p>
+<button class="btn" onclick="addToCart(400000)">Tambah</button>
+</div>
+
+<div class="product">
+<img src="images/abaya 1.jpg">
+<p>Abaya Rumbai</p>
+<p class="price">Rp 280.000</p>
+<button class="btn" onclick="addToCart(280000)">Tambah</button>
+</div>
+
+<div class="product">
+<img src="images/abaya white.jpg">
+<p>White Abaya</p>
+<p class="price">Rp 300.000</p>
+<button class="btn" onclick="addToCart(300000)">Tambah</button>
+</div>
+
 </div>
 </section>
 
-<!-- ===== FLOATING CART ===== -->
-<div class="cart-float" onclick="openCart()">
-🛒
+<!-- FLOATING CART -->
+<div class="cart-float" onclick="openCart()">🛒
 <div class="cart-badge" id="cartCount">0</div>
 </div>
 
-<!-- ===== POPUP KERANJANG ===== -->
+<!-- POPUP CART -->
 <div class="popup" id="cartPopup">
 <div class="popup-box">
 <h3>Keranjang</h3>
@@ -157,59 +192,67 @@ text-align:center;
 </div>
 </div>
 
-<!-- ===== POPUP PEMBAYARAN ===== -->
+<!-- POPUP PAYMENT -->
 <div class="popup" id="paymentPopup">
 <div class="popup-box">
-<h3>Pilih Pembayaran</h3>
-<p>✔ QRIS</p>
-<p>✔ Transfer Bank</p>
-<button class="btn" onclick="paymentSuccess()">Bayar</button><br><br>
+<h3>Metode Pembayaran</h3>
+
+<p><strong>QRIS</strong></p>
+<img src="images/qris.jpg" style="width:180px"><br><br>
+
+<p><strong>Transfer Bank</strong></p>
+<p>BCA: 7765439921</p>
+<p>a.n Rama Signature Abaya</p>
+
+<hr><br>
+<p><strong>Konfirmasi:</strong></p>
+<p>📞 0812-3456-7890</p>
+<p>📍 Tangerang</p>
+
+<button class="btn" onclick="paymentSuccess()">Saya Sudah Bayar</button><br><br>
 <button class="btn" onclick="closePopup('paymentPopup')">Batal</button>
 </div>
 </div>
 
-<!-- ===== POPUP BERHASIL ===== -->
+<!-- POPUP SUCCESS -->
 <div class="popup" id="successPopup">
 <div class="popup-box">
 <h3>🎉 Transaksi Berhasil</h3>
-<p>Terima kasih telah berbelanja</p>
+<p>Terima kasih sudah berbelanja 💛</p>
 <button class="btn" onclick="closePopup('successPopup')">OK</button>
 </div>
 </div>
+
+<section id="contact">
+<h3>Kontak</h3>
+<p>📍 Tangerang</p>
+<p>📞 0812-3456-7890</p>
+</section>
 
 <footer>
 <p>© 2025 Rama Signature Abaya</p>
 </footer>
 
 <script>
-let total = 0;
-let count = 0;
-
-function addToCart(price){
-total += price;
-count++;
-document.getElementById("cartCount").innerText = count;
+let total=0,count=0;
+function addToCart(p){
+total+=p;count++;
+cartCount.innerText=count;
 }
-
 function openCart(){
-document.getElementById("cartTotal").innerText =
-"Total: Rp " + total.toLocaleString();
-document.getElementById("cartPopup").style.display="flex";
+cartTotal.innerText="Total: Rp "+total.toLocaleString();
+cartPopup.style.display="flex";
 }
-
 function openPayment(){
-closePopup("cartPopup");
-document.getElementById("paymentPopup").style.display="flex";
+cartPopup.style.display="none";
+paymentPopup.style.display="flex";
 }
-
 function paymentSuccess(){
-closePopup("paymentPopup");
-document.getElementById("successPopup").style.display="flex";
-total = 0;
-count = 0;
-document.getElementById("cartCount").innerText = 0;
+paymentPopup.style.display="none";
+successPopup.style.display="flex";
+total=0;count=0;
+cartCount.innerText=0;
 }
-
 function closePopup(id){
 document.getElementById(id).style.display="none";
 }
