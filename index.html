@@ -1,310 +1,89 @@
-<!DOCTYPE html>
-<html lang="id">
 <head>
+    <!-- ===== BASIC META ===== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rama Signature Abaya - Elegan dan Modis</title>
+
+    <title>Rama Signature Abaya | Abaya Elegan, Modis & Premium</title>
+
+    <meta name="description" content="Rama Signature Abaya menghadirkan koleksi abaya elegan dan modis dengan desain premium, nyaman digunakan, dan cocok untuk berbagai acara.">
+    <meta name="keywords" content="abaya elegan, abaya premium, abaya modern, rama signature abaya, fashion muslimah">
+    <meta name="author" content="Rama Signature Abaya">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="id">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+
+    <!-- ===== CANONICAL ===== -->
+    <link rel="canonical" href="https://username.github.io/rama-signature-abaya/">
+
+    <!-- ===== GOOGLE FONTS ===== -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #000000;
-            --secondary: #d4af37;
-            --light: #fffaf5;
-            --gradient: linear-gradient(135deg, #000000, #d4af37);
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+    <!-- ===== OPEN GRAPH (FACEBOOK, WHATSAPP) ===== -->
+    <meta property="og:title" content="Rama Signature Abaya | Abaya Elegan & Modis">
+    <meta property="og:description" content="Temukan koleksi abaya premium dengan desain elegan dan modern dari Rama Signature Abaya.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://username.github.io/rama-signature-abaya/">
+    <meta property="og:image" content="https://username.github.io/rama-signature-abaya/assets/abaya-cover.jpg">
+    <meta property="og:site_name" content="Rama Signature Abaya">
 
-        body {
-            background-color: var(--light);
-            color: var(--primary);
-            scroll-behavior: smooth;
-        }
+    <!-- ===== TWITTER CARD ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rama Signature Abaya | Abaya Elegan & Modis">
+    <meta name="twitter:description" content="Koleksi abaya premium untuk tampilan muslimah modern dan berkelas.">
+    <meta name="twitter:image" content="https://username.github.io/rama-signature-abaya/assets/abaya-cover.jpg">
 
-        header {
-            background: var(--gradient);
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 8%;
-            position: fixed;
-            width: 100%;
-            z-index: 10;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #ffe9c6;
-        }
-
-        .hero {
-            background: var(--gradient);
-            color: white;
-            text-align: center;
-            padding: 150px 20px 100px;
-            background-size: cover;
-            animation: fadeIn 1.2s ease-in;
-        }
-
-        .hero img {
-            width: 250px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            background-color: #fff;
-            color: var(--primary);
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background-color: var(--secondary);
-            color: white;
-        }
-
-        section {
-            padding: 80px 10%;
-            text-align: center;
-        }
-
-        h3 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: var(--primary);
-        }
-
-        .about p {
-            max-width: 700px;
-            margin: auto;
-            line-height: 1.7;
-        }
-
-        .benefits {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-        }
-
-        .benefit {
-            background: #fff;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
-
-        .benefit:hover {
-            transform: translateY(-5px);
-        }
-
-        .benefit i {
-            font-size: 40px;
-            color: var(--secondary);
-            margin-bottom: 15px;
-        }
-
-        .collection {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-        }
-
-        .product {
-            background: #fff;
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: 0.3s;
-            text-align: center;
-        }
-
-        .product:hover {
-            transform: translateY(-5px);
-        }
-
-        .product img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .product .price {
-            font-weight: 600;
-            color: var(--secondary);
-            margin-top: 10px;
-        }
-
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .testimonial {
-            background: #fff;
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        .testimonial img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-
-        .order-form input, .order-form textarea, .order-form select {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            border: 1px solid #ccc;
-        }
-
-        .order-form button {
-            background: var(--gradient);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        .order-form button:hover {
-            opacity: 0.9;
-        }
-
-        .contact {
-            line-height: 1.8;
-        }
-
-        footer {
-            background: var(--gradient);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-        }
-
-        .popup, .promo-popup {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup-content, .promo-content {
-            background: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            width: 90%;
-            max-width: 400px;
-            animation: slideDown 0.4s ease;
-        }
-
-        .promo-content {
-            background: var(--light);
-        }
-
-        .popup-content h4 {
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        @keyframes fadeIn {
-            from {opacity: 0; transform: translateY(20px);}
-            to {opacity: 1; transform: translateY(0);}
-        }
-
-        @keyframes slideDown {
-            from {transform: translateY(-50px); opacity: 0;}
-            to {transform: translateY(0); opacity: 1;}
-        }
-
-        @media (max-width: 768px) {
-            header {flex-direction: column;}
-            nav ul {flex-direction: column; align-items: center;}
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            border-radius: 50%;
-            padding: 15px;
-            font-size: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            text-decoration: none;
-        }
-    </style>
-    <script>
-        function showPopup() {
-            document.getElementById("popup").style.display = "flex";
-        }
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
-        }
-        function closePromo() {
-            document.getElementById("promo").style.display = "none";
-        }
-        window.onload = function() {
-            setTimeout(() => {
-                document.getElementById("promo").style.display = "flex";
-            }, 1200);
-        }
+    <!-- ===== JSON-LD : LOCAL BUSINESS ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ClothingStore",
+      "name": "Rama Signature Abaya",
+      "url": "https://username.github.io/rama-signature-abaya/",
+      "logo": "https://username.github.io/rama-signature-abaya/assets/logo.png",
+      "description": "Rama Signature Abaya adalah brand fashion muslimah yang menyediakan abaya elegan dan modis dengan kualitas premium.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ID"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "availableLanguage": ["Indonesian"]
+      },
+      "sameAs": [
+        "https://www.instagram.com/ramasignatureabaya",
+        "https://www.tiktok.com/@ramasignatureabaya"
+      ]
+    }
     </script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PJ41DLBKTC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-PJ41DLBKTC');
-</script>
+    <!-- ===== JSON-LD : PRODUCT ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Rama Signature Abaya",
+      "image": "https://username.github.io/rama-signature-abaya/assets/abaya-product.jpg",
+      "description": "Abaya elegan dengan desain modern, bahan premium, dan nyaman digunakan.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Rama Signature Abaya"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "IDR",
+        "price": "350000",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
 </head>
+
 <body>
 
     <header>
@@ -364,11 +143,6 @@
                 <p class="price">Rp 450.000</p>
             </div>
             <div class="product">
-                <img src="images/Bow Charm Abaya.jpg" alt="Bow Charm Abaya">
-                <p>Bow Charm Abaya</p>
-                <p class="price">Rp 200.000</p>
-            </div>
-            <div class="product">
                 <img src="images/Mocha elegance Abaya.jpg" alt="Mocha Elegance Abaya">
                 <p>Mocha Elegance Abaya</p>
                 <p class="price">Rp 350.000</p>
@@ -411,7 +185,6 @@
                 <option value="Pearl grace abaya">1. Pearl grace abaya</option>
                 <option value="Nooir bloom abaya">2. Nooir bloom abaya</option>
                 <option value="Luxe silver abaya">3. Luxe silver abaya</option>
-                <option value="Bow charm abaya">4. Bow charm abaya</option>
                 <option value="Mocha elegance abaya">5. Mocha elegance abaya</option>
                 <option value="Midnight pearl abaya">6. Midnight pearl abaya</option>
                 <option value="Abaya rumbai">7. Abaya rumbai</option>
@@ -455,3 +228,4 @@
 </body>
 
 </html>
+
